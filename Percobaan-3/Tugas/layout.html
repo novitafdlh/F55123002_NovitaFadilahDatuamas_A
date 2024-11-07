@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Mengimpor font dari Google Fonts -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #0a1a2f, #1f2a46);  /* Gradasi hitam ke biru */
+            color: #fff;  /* Menyesuaikan warna teks menjadi putih agar kontras */
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.7); /* Semi transparan hitam untuk header */
+            color: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10; 
+            transition: padding 0.3s ease, height 0.3s ease;
+        }
+
+        header.smaller {
+            padding: 0.5rem;
+            height: 50px;
+        }
+
+        header .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: width 0.3s ease, height 0.3s ease;
+        }
+
+        header.smaller .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        header .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00bcd4; /* Warna biru futuristik untuk greeting */
+            margin-left: 20px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Efek bayangan futuristik */
+            transition: font-size 0.3s ease;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        header nav ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        header nav ul li a.active {
+            color: #00bcd4; /* Biru terang untuk link aktif */
+        }
+
+        main {
+            padding: 20px;
+            padding-top: 60px;
+            transition: padding-top 0.3s ease;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);  /* Background semi transparan hitam */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);  /* Efek bayangan untuk memberikan kesan futuristik */
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #00bcd4; /* Warna biru untuk heading */
+        }
+
+        #tentang-saya p {
+            font-size: 1rem;
+            color: #bbb; /* Warna teks yang lebih terang agar lebih mudah dibaca */
+        }
+
+        #portofolio .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        #portofolio .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow futuristik */
+            transition: transform 0.3s ease;
+        }
+
+        #portofolio .gallery img:hover {
+            transform: scale(1.05); /* Efek hover dengan zoom */
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.7);  /* Footer dengan latar belakang semi transparan hitam */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 10px 0;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header id="navbar">
+        <div class="logo">
+            <img src="img/logo butterfly.webp" alt="Logo Saya">
+        </div>
+        <div class="greeting">Selamat datang di halaman profil saya</div>
+        <nav>
+            <ul>
+                <li><a href="#home" id="homeLink" onclick="goHome()">Home</a></li>
+                <li><a href="#tentang-saya" onclick="setActiveLink(this)">Tentang Saya</a></li>
+                <li><a href="#kontak" onclick="setActiveLink(this)">Kontak</a></li>
+                <li><a href="#portofolio" onclick="setActiveLink(this)">Portofolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="tentang-saya">
+            <h2>Tentang Saya</h2>
+            <p>Halo, nama saya Novita Fadilah Datuamas dengan NIM F55123002. <br>Saya seorang mahasiswi semester 3 jurusan Teknologi Informasi di Universitas Tadulako. 
+            <br>Saya memiliki beberapa keterampilan di bidang komputer. Saya bersemangat untuk terus belajar dan berkembang dalam bidang ini.</p>
+        </section>
+
+        <section id="portofolio">
+            <h2>Portofolio</h2>
+            <div class="gallery">
+                <img src="img/Proyek1.png" alt="Proyek 1">
+                <img src="img/Proyek2.png" alt="Proyek 2">
+            </div>
+        </section>
+    </main>
+
+    <footer id="kontak">
+        <p>Kontak saya di: <a href="mailto:nvt13251920@gmail.com">nvt13251920@gmail.com</a></p>
+        <p>Ikuti saya di media sosial:</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+        </ul>
+    </footer>
+
+    <script>
+        function setActiveLink(link) {
+            const links = document.querySelectorAll('header nav ul li a');
+            links.forEach(function (l) {
+                l.classList.remove('active');
+            });
+            link.classList.add('active');
+            document.getElementById('navbar').classList.add('smaller');
+            document.querySelector('main').style.paddingTop = '70px';
+        }
+
+        function goHome() {
+            const links = document.querySelectorAll('header nav ul li a');
+            links.forEach(function (l) {
+                l.classList.remove('active');
+            });
+            document.getElementById('homeLink').classList.add('active');
+
+            document.getElementById('navbar').classList.remove('smaller');
+            
+            document.querySelector('main').style.paddingTop = '60px';
+            
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.querySelectorAll('header nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                setTimeout(function() {
+                    const targetId = anchor.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: target.offsetTop - document.getElementById('navbar').offsetHeight, 
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
